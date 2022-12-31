@@ -1,23 +1,48 @@
-<form class="space-y-5">
+<app-alert *ngIf="showAlert" [alertType]="alertType">{{
+  alertMessage
+}}</app-alert>
+<form #loginForm="ngForm" class="space-y-5" (ngSubmit)="login()">
   <div>
     <label class="inline-block mb-1.5">Email</label>
     <input
+      #email="ngModel"
+      name="email"
       type="email"
-      class="block w-full text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+      class="block w-full mb-1 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
       placeholder="name@example.com"
+      [(ngModel)]="credentials.email"
+      pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+      required
     />
+    <p
+      *ngIf="email.touched && email.dirty && email.errors"
+      class="text-red-400"
+    >
+      Email is invalid
+    </p>
   </div>
   <div>
     <label class="inline-block mb-1.5">Password</label>
     <input
+      #password="ngModel"
+      name="password"
       type="password"
-      class="block w-full text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+      class="block w-full mb-1 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
       placeholder="Password"
+      [(ngModel)]="credentials.password"
+      required
     />
+    <p
+      *ngIf="password.touched && password.dirty && password.errors"
+      class="text-red-400"
+    >
+      Password is required
+    </p>
   </div>
   <button
     type="submit"
-    class="block w-full bg-indigo-400 text-white py-2.5 rounded transition hover:bg-indigo-500"
+    class="block w-full bg-indigo-400 text-white py-2.5 rounded transition hover:bg-indigo-500 disabled:bg-gray-400"
+    [disabled]="loginForm.invalid"
   >
     Submit
   </button>
