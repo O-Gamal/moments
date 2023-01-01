@@ -46,8 +46,8 @@
   <button
     type="submit"
     class="block w-full bg-indigo-400 text-white py-2.5 rounded transition hover:bg-indigo-500 disabled:bg-gray-400"
-    [disabled]="registerForm.invalid"
+    [disabled]="registerForm.invalid || inSubmission"
   >
-    Submit
+    {{ inSubmission ? "Loading..." : "Submit" }}
   </button>
 </form>
