@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import User from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { AlertType } from 'src/app/shared/alert/alert.component';
 
-type alertType = 'error' | 'worning' | 'normal' | 'success' | '';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,7 +16,7 @@ export class RegisterComponent {
 
   showAlert = false;
   alertMessage = '';
-  alertType: alertType = '';
+  alertType: AlertType = '';
 
   registerForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
