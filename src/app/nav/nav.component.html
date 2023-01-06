@@ -1,22 +1,36 @@
 <header id="header">
   <nav class="mx-auto flex justify-start items-center py-8 px-4 md:px-8">
-    <a
-      class="text-3xl text-gray-100 font-bold uppercase mr-10"
-      href="index.html"
+    <a class="text-3xl text-indigo-400 font-bold uppercase mr-10" routerLink="/"
       >Moments</a
     >
     <div class="flex flex-grow items-center">
       <ul class="flex flex-row mt-1">
         <ng-container *ngIf="auth.isAuthenticated$ | async">
           <li>
-            <a class="px-2 hover:opacity-80" href="#">Manage</a>
+            <a
+              class="px-2 hover:opacity-80"
+              routerLink="manage"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Manage</a
+            >
           </li>
           <li>
-            <a class="px-2 hover:opacity-80" href="#">Upload</a>
+            <a
+              class="px-2 hover:opacity-80"
+              routerLink="upload"
+              routerLinkActive="text-indigo-400"
+              >Upload</a
+            >
           </li></ng-container
         >
         <li *ngIf="!(auth.isAuthenticated$ | async)">
-          <a class="px-2 hover:opacity-80" href="about.html">About</a>
+          <a
+            class="px-2 hover:opacity-80"
+            routerLink="/about"
+            routerLinkActive="text-indigo-400"
+            >About</a
+          >
         </li>
       </ul>
 
@@ -30,7 +44,7 @@
         <ul
           class="flex flex-row ml-auto bg-secondary hover:bg-red-500 transition-colors duration-300"
         >
-          <a class="px-6 py-2" href="#" (click)="logout($event)">Logout</a>
+          <a class="px-6 py-2" href="#" (click)="auth.logout($event)">Logout</a>
         </ul></ng-template
       >
     </div>
