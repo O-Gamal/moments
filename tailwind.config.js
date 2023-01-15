@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         sans: ["Montserrat", "system-ui"],
       },
+      animation: {
+        "spin-slow": "spin 2s linear infinite",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],
