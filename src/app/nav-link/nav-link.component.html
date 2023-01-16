@@ -1,0 +1,9 @@
+<div
+  [routerLinkActiveOptions]="{ exact: true }"
+  routerLinkActive="border-primary-turquoise text-primary-turquoise"
+  class="bg-priamry-dark border border-transparent text-white p-6 rounded-xl text-lg"
+>
+  <a [routerLink]="route" class="flex items-center justify-between">
+    <ng-content></ng-content>
+  </a>
+</div>

@@ -1,8 +1,10 @@
 <!-- Header -->
-<app-nav></app-nav>
-
-<router-outlet></router-outlet>
-
-<app-auth-modal
-  *ngIf="!(auth.isAuthenticatedWithDelay$ | async)"
-></app-auth-modal>
+<main class="flex gap-10 h-screen w-screen">
+  <app-side-menu></app-side-menu>
+  <div class="max-w-screen-2xl h-full overflow-y-auto pb-6">
+    <router-outlet></router-outlet>
+  </div>
+  <app-auth-modal
+    *ngIf="!(auth.isAuthenticatedWithDelay$ | async)"
+  ></app-auth-modal>
+</main>
