@@ -35,4 +35,9 @@ export class SideMenuComponent {
   ];
 
   constructor(public modal: ModalService, public auth: AuthService) {}
+
+  openModal($event: Event) {
+    $event.preventDefault();
+    this.modal.toggleModal('auth');
+  }
 }

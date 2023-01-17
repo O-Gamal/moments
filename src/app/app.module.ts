@@ -18,6 +18,7 @@ import { ClipsListComponent } from './clips-list/clips-list.component';
 import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { NavLinkComponent } from './nav-link/nav-link.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { NavLinkComponent } from './nav-link/nav-link.component';
     AngularFirestoreModule,
     AppRoutingModule,
     AngularFireStorageModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
