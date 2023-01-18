@@ -8,6 +8,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./side-menu.component.css'],
 })
 export class SideMenuComponent {
+  minimizedMenu = false;
+
   mainNavLinks = [
     {
       label: 'Latest Clips',
@@ -39,5 +41,10 @@ export class SideMenuComponent {
   openModal($event: Event) {
     $event.preventDefault();
     this.modal.toggleModal('auth');
+  }
+
+  minimizeMenu() {
+    this.minimizedMenu = !this.minimizedMenu;
+    console.log(this.minimizedMenu);
   }
 }
