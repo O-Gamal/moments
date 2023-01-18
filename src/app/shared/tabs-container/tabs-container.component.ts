@@ -27,8 +27,8 @@ export class TabsContainerComponent implements AfterContentInit {
 
   styleTab(tab: TabComponent) {
     return tab.active
-      ? 'hover:text-white text-white bg-indigo-400'
-      : 'hover:text-indigo-400';
+      ? 'hover:text-white text-white bg-secondary-turquoise'
+      : 'hover:text-secondary-turquoise';
   }
 
   ngAfterContentInit() {

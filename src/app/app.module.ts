@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
 import { UserModule } from './user/user.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environment/environment';
@@ -23,7 +22,6 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     HomeComponent,
     AboutComponent,
     ClipComponent,

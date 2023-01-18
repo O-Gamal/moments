@@ -6,11 +6,7 @@
       >Moments</a
     >
     <div class="flex-col flex items-stretch gap-4">
-      <app-nav-link
-        *ngFor="let navLink of mainNavLinks"
-        [route]="navLink.path"
-        [shortcut]="navLink.shortcut"
-      >
+      <app-nav-link *ngFor="let navLink of mainNavLinks" [route]="navLink.path">
         <div class="flex gap-2 items-center">
           <svg
             *ngIf="navLink.shortcut === '1'"
@@ -44,16 +40,15 @@
           </svg>
           {{ navLink.label }}
         </div>
-        <span
+        <!-- <span
           class="bg-secondary-dark text-gray text-sm h-7 w-7 flex flex-col items-center justify-center rounded"
           >{{ navLink.shortcut }}</span
-        >
+        > -->
       </app-nav-link>
       <ng-container *ngIf="auth.isAuthenticated$ | async">
         <app-nav-link
           *ngFor="let navLink of userNavLinks"
           [route]="navLink.path"
-          [shortcut]="navLink.shortcut"
         >
           <div class="flex gap-2 items-center">
             <svg
@@ -94,12 +89,12 @@
 
             {{ navLink.label }}
           </div>
-          <span
+          <!-- <span
             class="bg-secondary-dark text-gray text-sm h-7 w-7 flex flex-col items-center justify-center rounded"
             >{{ navLink.shortcut }}</span
-          >
-        </app-nav-link> </ng-container
-      >2
+          > -->
+        </app-nav-link>
+      </ng-container>
     </div>
 
     <button

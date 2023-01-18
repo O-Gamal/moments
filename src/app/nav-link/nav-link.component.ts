@@ -14,15 +14,13 @@ import { Router } from '@angular/router';
 })
 export class NavLinkComponent {
   @Input() route = '';
-  @Input() shortcut = '1';
 
-  constructor(private router: Router) {}
+  // constructor(private router: Router) {}
 
-  @HostListener('document:keydown', ['$event'])
-  navigateToPate(e: Event) {
-    e.preventDefault();
-    if ((e as KeyboardEvent).key === this.shortcut) {
-      this.router.navigate(['/', this.route]);
-    }
-  }
+  // @HostListener('document:keypress', ['$event'])
+  // navigateToPate(e: Event) {
+  //   if ((e as KeyboardEvent).key === this.shortcut) {
+  //     this.router.navigate(['/', this.route]);
+  //   }
+  // }
 }

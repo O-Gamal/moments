@@ -1,33 +1,31 @@
 <input
   [type]="inputType"
-  class="block w-full mb-1 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+  class="block w-full mb-1 text-gray-200 border border-gray-400 transition duration-500 focus:ring-0 outline-none rounded bg-transparent focus:border-primary-turquoise"
   [placeholder]="placeholder"
   [formControl]="control"
 />
 <ng-container *ngIf="control.touched">
-  <p class="text-red-400" *ngIf="control.errors?.['required']">
-    Field is required
-  </p>
-  <p class="text-red-400" *ngIf="control.errors?.['minlength']">
+  <p class="text-red" *ngIf="control.errors?.['required']">Field is required</p>
+  <p class="text-red" *ngIf="control.errors?.['minlength']">
     The value you entered is
     {{control.errors?.['minlength'].actualLength}}
     characters long. (min
     {{control.errors?.['minlength'].requiredLength}}
     characters is required)
   </p>
-  <p class="text-red-400" *ngIf="control.errors?.['email']">
+  <p class="text-red" *ngIf="control.errors?.['email']">
     You must enter a valid email
   </p>
-  <p class="text-red-400" *ngIf="control.errors?.['min']">Value too low</p>
-  <p class="text-red-400" *ngIf="control.errors?.['max']">Value too high</p>
-  <p class="text-red-400" *ngIf="control.errors?.['pattern']">
+  <p class="text-red" *ngIf="control.errors?.['min']">Value too low</p>
+  <p class="text-red" *ngIf="control.errors?.['max']">Value too high</p>
+  <p class="text-red" *ngIf="control.errors?.['pattern']">
     Password must be minimum eight characters, at least one uppercase letter,
     one lowercase letter, one number and one special character
   </p>
-  <p class="text-red-400" *ngIf="control.errors?.['noMatch']">
+  <p class="text-red" *ngIf="control.errors?.['noMatch']">
     Passwords do not match
   </p>
-  <p class="text-red-400" *ngIf="control.errors?.['emailTaken']">
+  <p class="text-red" *ngIf="control.errors?.['emailTaken']">
     This email is taken. Please try another email
   </p>
 </ng-container>
