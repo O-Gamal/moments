@@ -18,6 +18,7 @@ import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { NavLinkComponent } from './nav-link/nav-link.component';
 import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
