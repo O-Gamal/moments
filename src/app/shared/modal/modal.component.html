@@ -4,7 +4,7 @@
   [ngClass]="{ hidden: !modal.isModalOpen(modalId) }"
 >
   <div
-    class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+    class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
   >
     <!-- Modal BG Overlay -->
     <div class="fixed inset-0 transition-opacity" (click)="closeModal()">
@@ -16,7 +16,7 @@
     >
 
     <div
-      class="inline-block align-bottom bg-secondary-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+      class="inline-block align-bottom bg-secondary-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle max-w-lg w-full"
     >
       <div class="p-6 text-left">
         <div class="flex justify-between items-center pb-4 mb-2">

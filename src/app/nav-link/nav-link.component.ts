@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class NavLinkComponent {
   @Input() route = '';
+  @Input() mobileSize = false;
 
   // constructor(private router: Router) {}
 

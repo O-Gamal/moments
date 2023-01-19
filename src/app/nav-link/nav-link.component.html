@@ -1,7 +1,8 @@
 <div
   [routerLinkActiveOptions]="{ exact: true }"
   routerLinkActive="border-primary-turquoise text-primary-turquoise"
-  class="bg-priamry-dark border border-transparent text-white p-5 rounded-xl text-lg"
+  class="bg-priamry-dark border border-transparent text-white rounded-xl text-lg"
+  [ngClass]="{ 'p-5': !mobileSize, 'p-3': mobileSize }"
 >
   <a [routerLink]="route" class="flex items-center justify-between">
     <ng-content></ng-content>
