@@ -50,7 +50,6 @@ export class AuthService {
       name: userData.name,
       email: userData.email,
       age: userData.age,
-      phone_number: userData.phone_number,
     });
 
     await userCredentials.user?.updateProfile({

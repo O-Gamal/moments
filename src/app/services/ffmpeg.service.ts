@@ -19,7 +19,7 @@ export class FfmpegService {
     this.isReady = true;
   }
 
-  async getScreenShots(file: File, seconds = [1, 2, 3]) {
+  async getScreenShots(file: File, seconds = [1, 3, 5]) {
     this.isRunning = true;
     await this.writeFileIntoMemory(file);
 

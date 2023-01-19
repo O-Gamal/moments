@@ -3,5 +3,4 @@ export default interface User {
   password?: string;
   name: string;
   age: number;
-  phone_number: string;
 }
