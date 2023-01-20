@@ -36,6 +36,8 @@ export class ClipsListComponent implements OnInit, OnDestroy, OnChanges {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight) {
       this.clipService.getClips(this.noOfClips);
+      console.log(this.noOfClips);
+
       console.log('bottom');
     }
   };
